@@ -1,3 +1,0 @@
-Final project CycloBuddy
-
-ReadMe is going to be updated...
