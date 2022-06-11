@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Button } from "antd";
+import { Card, Col, Row } from "antd";
 
 const API_URL = "http://localhost:5005";
 
@@ -20,7 +22,6 @@ function SignupPage(props) {
     e.preventDefault();
     const requestBody = { email, password, name };
 
- 
     axios
       .post(`${API_URL}/api/auth/signup`, requestBody)
       .then((response) => {
@@ -34,30 +35,48 @@ function SignupPage(props) {
 
   return (
     <div className="SignupPage">
-      <h1>Sign Up</h1>
+      <div className="site-card-wrapper">
+        <Row gutter={16}>
+          <Col span={8}>
+            <Card title="Sign Up" className="sign-log-card" bordered={false}>
+              <form onSubmit={handleSignupSubmit}>
+                <label>Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={handleEmail}
+                />
 
-      <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+                <label>Password:</label>
+                <input
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={handlePassword}
+                />
 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+                <label>Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={name}
+                  onChange={handleName}
+                />
 
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+                <button type="submit">Sign Up</button>
+              </form>
 
-        <button type="submit">Sign Up</button>
-      </form>
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+              <p>Already have account?</p>
+              <button>
+                <Link to={"/login"}> Login</Link>
+              </button>
+            </Card>
+          </Col>
+        </Row>
+      </div>
     </div>
   );
 }
