@@ -11,14 +11,15 @@ import IsAnon from "./components/IsAnon";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <Navbar />
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/mainpage" element={<MainPage />} />
+        <Route path="*" element={<HomePage/>} />
+        <Route path="/signup" element={<IsAnon><SignupPage /></IsAnon>} />
+        <Route path="/login" element={<IsAnon><LoginPage /></IsAnon>} />
+        <Route path="/mainpage" element={<IsPrivate><MainPage /></IsPrivate>} />
       </Routes>
 
       <Footer />

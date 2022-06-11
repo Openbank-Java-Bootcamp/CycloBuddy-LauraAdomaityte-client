@@ -63,7 +63,7 @@
  
   footer {
     background-color: #000000;
-    text-align: left;
+    text-align: center;
     padding: 10px;
   }
 
@@ -78,4 +78,26 @@
   }
 
   
- 
+/*Sign in and login pages*/
+.site-card-wrapper {
+  padding: 30px;
+  background: #ececec;
+  display: flex;
+  background-color:rgb(158, 182, 199);
+  margin: 10px;
+}
+
+.sign-log-card {
+  width: 250px;
+}
+
+.sider {
+  color: black;
+  font-size: 2em;
+  text-shadow: 2px 2px 5px rgb(158, 182, 199);
+}
+
+
+
+
+
