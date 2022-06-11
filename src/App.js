@@ -8,6 +8,11 @@ import LoginPage from "./pages/LoginPage";
 import MainPage from "./pages/MainPage";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
+import MyRidesPage from "./pages/MyRidesPage";
+import MyProfilePage from "./pages/MyProfilePage";
+import MyRoutesPage from "./pages/MyRoutesPage";
+import AllRidesPage from "./pages/AllRidesPage";
+import AllRoutesPage from "./pages/AllRoutesPage";
 
 function App() {
   return (
@@ -20,6 +25,12 @@ function App() {
         <Route path="/signup" element={<IsAnon><SignupPage /></IsAnon>} />
         <Route path="/login" element={<IsAnon><LoginPage /></IsAnon>} />
         <Route path="/mainpage" element={<IsPrivate><MainPage /></IsPrivate>} />
+        <Route path="/profile" element={<IsPrivate><MyProfilePage/></IsPrivate>} />
+        <Route path="/myrides" element={<IsPrivate><MyRidesPage/></IsPrivate>} />
+        <Route path="/myroutes" element={<IsPrivate><MyRoutesPage/></IsPrivate>} />
+        <Route path="/allrides" element={<IsPrivate><AllRidesPage/></IsPrivate>} />
+        <Route path="/allroutes" element={<IsPrivate><AllRoutesPage/></IsPrivate>} />
+
       </Routes>
 
       <Footer />
