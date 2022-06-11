@@ -9,6 +9,7 @@
   [data-theme="dark"] .ant-layout-header {
     background: #6aa0c7;
   }
+  
   [data-theme="dark"] .ant-layout-footer {
     background: #6aa0c7;
   }
@@ -27,11 +28,54 @@
     min-height: 120px;
     color: #fff;
     line-height: 120px;
-    background: rgba(16, 142, 233, 1);
+    background: rgb(158, 182, 199);
   }
   [data-theme="dark"] .ant-layout-content {
     background: #107bcb;
   }
-  > .code-box-demo > .ant-layout + .ant-layout {
+  .code-box-demo > .ant-layout + .ant-layout {
     margin-top: 48px;
   }
+
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .navPic{
+    width: 100%;
+    margin: 40px 0;
+  }
+
+  .top-right {
+    position: absolute;
+    top: 8px;
+    right: 50px;
+    color: white;
+    margin-top: 20px;
+    font-size: 3em;
+    font-weight: 100;
+    text-shadow: 2px 2px 5px #000000;
+
+  }
+
+ 
+  footer {
+    background-color: #000000;
+    text-align: left;
+    padding: 10px;
+  }
+
+  .footerText {
+    color: rgb(225, 211, 211);
+  }
+ 
+  header {
+    display: flex;
+    justify-content: end;
+    align-items:center;
+  }
+
+  
+ 
