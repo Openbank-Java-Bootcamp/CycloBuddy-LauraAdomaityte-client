@@ -1,14 +1,13 @@
 import React from "react";
-import { Layout } from "antd";
-const { Header, Sider, Content } = Layout;
+import Sidebar from "../components/Sidebar";
+import pic from "../images/pic2.jpg";
+
 
 function MainPage(props) {
   return (
-    <div>
-      <Layout>
-        <Sider theme='light' className="sider">Sider</Sider>
-        <Content>Content</Content>
-      </Layout>
+    <div className="Mainpage">
+      <Sidebar/>
+      
     </div>
   );
 }
