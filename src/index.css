@@ -134,3 +134,25 @@ header {
 .Allridespage {
   display: flex;
 }
+
+.AllRidesCard-wrapper {
+  background-color: rgb(158, 182, 199);
+  margin:0;
+  padding: 0;
+  
+}
+.AllRidesCard {
+  display: flex;
+  margin: 30px;
+  padding: 10px;
+  text-align: left;
+  width: 800px;
+  border-style: ridge;
+  border-color: rgb(158, 182, 199);
+  background-color: rgba(89, 105, 116, 0.416);
+  color: white;
+}
+
+.AllRidesCard-buttons {
+  padding-left: 20px; 
+}
