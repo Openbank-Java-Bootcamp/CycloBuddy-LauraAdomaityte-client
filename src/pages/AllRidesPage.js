@@ -3,10 +3,12 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
+import AddRide from "../components/AddRide";
 const API_URL = "http://localhost:5005";
 
 function AllRidesPage() {
   const [rides, setRides] = useState([]);
+  const [showAddRide, setShowAddRide] = useState(false);
 
   const getAllRides = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -23,12 +25,17 @@ function AllRidesPage() {
     getAllRides();
   }, []);
 
+  const toggleShowAddRide = () => {
+    setShowAddRide(!showAddRide)
+  }
+
   return (
     <div className="Allridespage">
       <Sidebar />
       <div className="AllRidesCard-wrapper">
       <h1 className="PageTitle">All rides:</h1>
-      <Button ghost>Add new ride</Button>
+      {showAddRide && <AddRide refreshRides={getAllRides} />}
+      <Button ghost onClick={toggleShowAddRide}>{showAddRide ? "Hide form" : "Add new ride"}</Button>
         {rides.map((ride) => (
           <div className="AllRidesCard">
             <div>
