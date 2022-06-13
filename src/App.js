@@ -15,6 +15,7 @@ import AllRidesPage from "./pages/AllRidesPage";
 import AllRoutesPage from "./pages/AllRoutesPage";
 import RideDetailsPage from "./pages/RideDetailsPage";
 
+
 function App() {
   return (
     <div className="App" >
