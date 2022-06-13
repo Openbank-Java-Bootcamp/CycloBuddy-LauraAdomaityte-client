@@ -1,3 +1,17 @@
+/* App */
+.App {
+  text-align: center;
+}
+.App {
+  width: 100vw;
+  height: 100%;
+}
+
+.App {
+  background-color: #9a7878;;
+}
+
+
 /* Ant design*/
 .code-box-demo {
   text-align: center;
@@ -143,16 +157,99 @@ header {
 }
 .AllRidesCard {
   display: flex;
+  justify-content: space-between;
   margin: 30px;
   padding: 10px;
   text-align: left;
-  width: 800px;
+  width: 1000px;
   border-style: ridge;
   border-color: rgb(158, 182, 199);
   background-color: rgba(89, 105, 116, 0.416);
   color: white;
 }
 
-.AllRidesCard-buttons {
+.AllRidesCard-button {
   padding-left: 20px; 
+}
+
+/* RideDetailsPage */
+.RideDetails {
+  display: flex;
+  color: white;
+  text-align: left;
+  background-color: #9a7878;
+}
+
+.RideDetails-header {
+  color: white;
+}
+
+.RideDetails-box{
+  padding: 20px;
+  background-color: rgb(158, 182, 199);
+  width: 1000px;
+}
+
+.RideDetails-box-inner {
+  border-style: ridge;
+  border-color: rgb(158, 182, 199);
+  background-color: rgba(89, 105, 116, 0.416);
+  padding: 20px;
+}
+
+/* AllRoutesPage */
+.Allroutespage {
+  display: flex;
+}
+
+.AllRoutesCard-wrapper {
+  background-color: rgb(158, 182, 199);
+  margin:0;
+  padding: 0;
+  
+}
+.AllRoutesCard {
+  margin: 30px;
+  padding: 10px;
+  text-align: left;
+  width: 1000px;
+  border-style: ridge;
+  border-color: rgb(158, 182, 199);
+  background-color: rgba(89, 105, 116, 0.416);
+  color: white;
+}
+
+/* MyRidesPage */
+.Myridespage {
+  display: flex;
+}
+
+.MyRidesCard-wrapper {
+  background-color: rgb(158, 182, 199);
+  margin:0;
+  padding: 0;
+  
+}
+.MyRidesCard {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+  padding: 10px;
+  text-align: left;
+  width: 1000px;
+  border-style: ridge;
+  border-color: rgb(158, 182, 199);
+  background-color: rgba(89, 105, 116, 0.416);
+  color: white;
+}
+
+.MyRidesCard-inner{
+  width: 700px;
+}
+
+/* titles */
+.PageTitle {
+  padding-top: 20px;
+  color: white;
+  text-shadow: 2px 2px 5px #000000;
 }
