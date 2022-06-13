@@ -13,6 +13,7 @@ import MyProfilePage from "./pages/MyProfilePage";
 import MyRoutesPage from "./pages/MyRoutesPage";
 import AllRidesPage from "./pages/AllRidesPage";
 import AllRoutesPage from "./pages/AllRoutesPage";
+import RideDetailsPage from "./pages/RideDetailsPage";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
         <Route path="/myroutes" element={<IsPrivate><MyRoutesPage/></IsPrivate>} />
         <Route path="/allrides" element={<IsPrivate><AllRidesPage/></IsPrivate>} />
         <Route path="/allroutes" element={<IsPrivate><AllRoutesPage/></IsPrivate>} />
-
+        <Route path="/allrides/:rideId" element={<IsPrivate><RideDetailsPage/></IsPrivate>}/>
       </Routes>
 
       <Footer />

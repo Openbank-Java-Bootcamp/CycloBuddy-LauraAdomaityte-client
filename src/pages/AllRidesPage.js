@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
-import { Col, Card, Row, Button } from "antd";
+import { Button } from "antd";
+import { Link } from "react-router-dom";
 const API_URL = "http://localhost:5005";
 
-function AllRidesPage(props) {
+function AllRidesPage() {
   const [rides, setRides] = useState([]);
 
   const getAllRides = () => {
@@ -26,6 +27,8 @@ function AllRidesPage(props) {
     <div className="Allridespage">
       <Sidebar />
       <div className="AllRidesCard-wrapper">
+      <h1 className="PageTitle">All rides:</h1>
+      <Button ghost>Add new ride</Button>
         {rides.map((ride) => (
           <div className="AllRidesCard">
             <div>
@@ -42,9 +45,8 @@ function AllRidesPage(props) {
                 {ride.user.name}
               </p>
             </div>
-            <div className="AllRidesCard-buttons">
-              <Button ghost>Full ride description</Button>
-              <Button ghost>Organizer profile</Button>
+            <div className="AllRidesCard-button">
+              <Link to={`/allrides/${ride.id}`}><Button ghost>Full ride description</Button></Link>
             </div>
           </div>
         ))}
