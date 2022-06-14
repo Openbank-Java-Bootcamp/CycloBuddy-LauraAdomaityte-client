@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 const API_URL = "http://localhost:5005";
 
 function MyRoutesPage() {
-  const [myRides, setMyRides] = useState([]);
+  const [myRidesWithRoutes, setMyRidesWithRoute] = useState([]);
 
   const getMyRides = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -13,7 +13,12 @@ function MyRoutesPage() {
       .get(`${API_URL}/api/rides/user`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-      .then((response) => setMyRides(response.data))
+      .then((response) => {
+        const myRidesWithRoute = response.data.filter((ride) => {
+          return ride.route != null;
+        })
+        setMyRidesWithRoute(myRidesWithRoute);
+      })
       .catch((error) => console.log(error));
   };
 
@@ -26,7 +31,7 @@ function MyRoutesPage() {
       <Sidebar />
       <div className="MyRidesCard-wrapper">
         <h1 className="PageTitle">My routes:</h1>
-        {myRides.map((ride) => (
+        {myRidesWithRoutes.map((ride) => (
           <div className="MyRidesCard">
             <div className="MyRidesCard-inner">
               <h1 className="RideDetails-header">Route details:</h1>

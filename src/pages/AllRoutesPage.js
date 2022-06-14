@@ -3,32 +3,37 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 const API_URL = "http://localhost:5005";
 
-function AllRoutesPage(props) {
-  const [rides, setRides] = useState([]);
+function AllRoutesPage() {
   const [ridesWithRoute, setRidesWithRoute] = useState([]);
 
-  const getAllRides = () => {
+  const getAllRoutes = () => {
     const storedToken = localStorage.getItem("authToken");
 
     axios
       .get(`${API_URL}/api/rides`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-      .then((response) => setRides(response.data))
+      .then((response) => {
+        const allRides = response.data;
+        const filteredRides = allRides.filter((ride) => {
+          return ride.route != null;
+        });
+        setRidesWithRoute(filteredRides);
+      })
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
-    getAllRides();
+    getAllRoutes();
   }, []);
 
   return (
     <div className="Allroutespage">
       <Sidebar />
       <div className="AllRoutesCard-wrapper">
-      <h1 className="PageTitle">All routes:</h1>
-        {rides.map((ride) => (
-          <div className="AllRoutesCard">
+        <h1 className="PageTitle">All routes:</h1>
+        {ridesWithRoute.map((ride) => (
+          <div className="AllRoutesCard" key={ride.id}>
             <h1 className="RideDetails-header">Route details:</h1>
             <p>
               <b>Distance: </b>
