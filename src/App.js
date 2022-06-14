@@ -14,6 +14,7 @@ import MyRoutesPage from "./pages/MyRoutesPage";
 import AllRidesPage from "./pages/AllRidesPage";
 import AllRoutesPage from "./pages/AllRoutesPage";
 import RideDetailsPage from "./pages/RideDetailsPage";
+import EditRidePage from "./pages/EditRidePage";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/allrides" element={<IsPrivate><AllRidesPage/></IsPrivate>} />
         <Route path="/allroutes" element={<IsPrivate><AllRoutesPage/></IsPrivate>} />
         <Route path="/allrides/:rideId" element={<IsPrivate><RideDetailsPage/></IsPrivate>}/>
+        <Route path="/allrides/edit/:rideId" element={<IsPrivate><EditRidePage/></IsPrivate>} />
       </Routes>
 
       <Footer />

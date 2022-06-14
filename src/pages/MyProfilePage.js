@@ -1,42 +1,44 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { isCompositeComponent } from 'react-dom/test-utils';
 import Sidebar from '../components/Sidebar';
+import { AuthContext } from '../context/auth.context';
 const API_URL = "http://localhost:5005";
 
 function MyProfilePage(props) {
-    const [myRides, setMyRides] = useState([]);
-    const [ user, setUser ] = useState(null);
+    const [ me, setMe ] = useState(null);
+    const { user } = useContext(AuthContext);
+    
 
-    const getMyRides = () => {
+    const getUser = () => {
         const storedToken = localStorage.getItem("authToken");
     
         axios
-          .get(`${API_URL}/api/rides/user`, {
+          .get(`${API_URL}/api/users/${user.id}`, {
             headers: { Authorization: `Bearer ${storedToken}` },
           })
-          .then((response) => setMyRides(response.data))
+          .then((response) => setMe(response.data))
           .catch((error) => console.log(error));
-      };
-    
+      }
+      
       useEffect(() => {
-        getMyRides();
+        
         getUser();
       }, []);
 
-      const getUser = () => {
-        const storedToken = localStorage.getItem("authToken");
-    
-        axios
-          .get(`${API_URL}/api/users/${myRides[0].user.id}`, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-          })
-          .then((response) => setUser(response.data))
-          .catch((error) => console.log(error));
-      }
+      
 
     return (
         <div className="Myprofilepage">
             <Sidebar/>
+            <div className="profileCard-wrapper">
+            <h1 className="PageTitle">My profile details:</h1>
+            <div className="profileCard">
+            <p><b>Name: </b>{me.name}</p>
+            <p><b>Email: </b>{me.email}</p>
+            </div>
+            </div>
+            
         </div>
     );
 }

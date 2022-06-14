@@ -303,3 +303,65 @@ form > input {
   color: white;
   text-shadow: 2px 2px 5px #000000;
 }
+
+/* EditPage */
+.Editpage{
+  display: flex;
+}
+
+.EditRideCard-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  width: 1200px;
+  display: flex;
+  background-color: rgb(158, 182, 199);
+}
+
+.EditRideCard {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+  padding: 10px;
+  text-align: left;
+  width: 1100px;
+  border-style: ridge;
+  border-color: rgb(158, 182, 199);
+  background-color: rgba(89, 105, 116, 0.416);
+  color: white;
+}
+
+.Edit-button {
+  color: black;
+}
+
+/* MyProfilePage */
+.Myprofilepage{
+  display: flex;
+}
+
+.profileCard-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  width: 1200px;
+  display: flex;
+  background-color: rgb(158, 182, 199);
+}
+
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 30px;
+  padding: 10px;
+  text-align: left;
+  width: 1100px;
+  border-style: ridge;
+  border-color: rgb(158, 182, 199);
+  background-color: rgba(89, 105, 116, 0.416);
+  color: white;
+}
