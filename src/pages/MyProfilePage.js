@@ -31,13 +31,13 @@ function MyProfilePage(props) {
     return (
         <div className="Myprofilepage">
             <Sidebar/>
-            <div className="profileCard-wrapper">
+            {me && <div className="profileCard-wrapper">
             <h1 className="PageTitle">My profile details:</h1>
             <div className="profileCard">
             <p><b>Name: </b>{me.name}</p>
             <p><b>Email: </b>{me.email}</p>
             </div>
-            </div>
+            </div>}
             
         </div>
     );

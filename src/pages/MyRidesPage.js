@@ -62,6 +62,7 @@ function MyRidesPage() {
             </div>
             <div className="MyRidesCard-button">
               {ride.route === null && <Button ghost>Add route</Button>}
+              {ride.route != null && <Button ghost>See route</Button>}
               <Link to={`/allrides/edit/${ride.id}`}><Button ghost>Edit ride</Button></Link>
               <Button ghost onClick={() => deleteRide(ride.id)}>Delete ride</Button>
             </div>
