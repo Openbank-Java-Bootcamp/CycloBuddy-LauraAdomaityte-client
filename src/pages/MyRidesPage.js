@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import { Button } from "antd";
+import { Link } from "react-router-dom";
 const API_URL = "http://localhost:5005";
 
 function MyRidesPage() {
@@ -61,7 +62,7 @@ function MyRidesPage() {
             </div>
             <div className="MyRidesCard-button">
               {ride.route === null && <Button ghost>Add route</Button>}
-              <Button ghost>Edit ride</Button>
+              <Link to={`/allrides/edit/${ride.id}`}><Button ghost>Edit ride</Button></Link>
               <Button ghost onClick={() => deleteRide(ride.id)}>Delete ride</Button>
             </div>
           </div>
