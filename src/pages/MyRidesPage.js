@@ -22,6 +22,16 @@ function MyRidesPage() {
     getMyRides();
   }, []);
 
+  const deleteRide = (rideId) => {
+    const storedToken = localStorage.getItem("authToken");
+
+    axios.delete(`${API_URL}/api/rides/${rideId}`, {
+      headers: { Authorization: `Bearer ${storedToken}` },
+    }).then(() => {
+      getMyRides();
+    }).catch((error) => console.log(error))
+  }
+
 
   return (
     <div className="Myridespage">
@@ -50,8 +60,9 @@ function MyRidesPage() {
               
             </div>
             <div className="MyRidesCard-button">
+              {ride.route === null && <Button ghost>Add route</Button>}
               <Button ghost>Edit ride</Button>
-              <Button ghost>Delete ride</Button>
+              <Button ghost onClick={() => deleteRide(ride.id)}>Delete ride</Button>
             </div>
           </div>
         ))}
@@ -61,3 +72,4 @@ function MyRidesPage() {
 }
 
 export default MyRidesPage;
+
