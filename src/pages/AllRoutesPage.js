@@ -5,6 +5,7 @@ const API_URL = "http://localhost:5005";
 
 function AllRoutesPage(props) {
   const [rides, setRides] = useState([]);
+  const [ridesWithRoute, setRidesWithRoute] = useState([]);
 
   const getAllRides = () => {
     const storedToken = localStorage.getItem("authToken");

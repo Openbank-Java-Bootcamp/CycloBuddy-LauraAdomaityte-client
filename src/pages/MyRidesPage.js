@@ -47,35 +47,7 @@ function MyRidesPage() {
                 <b>Ride description: </b>
                 {ride.rideDescription}
               </p>
-              <p>
-                <b>Organized by: </b>
-                {ride.user.name}
-              </p>
-              <h1 className="RideDetails-header">Route details:</h1>
-              <p>
-                <b>Distance: </b>
-                {ride.route.distance} kilometers
-              </p>
-              <p>
-                <b>Elevation gain: </b>
-                {ride.route.elevationGain} meters
-              </p>
-              <p>
-                <b>Estimated duration: </b>
-                {ride.route.estimatedRouteDuration} minutes
-              </p>
-              <p>
-                <b>Route starts at: </b>
-                {ride.route.startPlace}
-              </p>
-              <p>
-                <b>Route ends at: </b>
-                {ride.route.endPlace}
-              </p>
-              <p>
-                <b>Route is for: </b>
-                {ride.route.bicycleType} bicycle
-              </p>
+              
             </div>
             <div className="MyRidesCard-button">
               <Button ghost>Edit ride</Button>

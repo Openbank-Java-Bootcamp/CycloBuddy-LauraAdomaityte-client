@@ -37,7 +37,7 @@ function AllRidesPage() {
       {showAddRide && <AddRide refreshRides={getAllRides} />}
       <Button ghost onClick={toggleShowAddRide}>{showAddRide ? "Hide form" : "Add new ride"}</Button>
         {rides.map((ride) => (
-          <div className="AllRidesCard">
+          <div className="AllRidesCard" key={ride.id}>
             <div>
               <p>
                 <b>Meeting location: </b>
@@ -48,12 +48,16 @@ function AllRidesPage() {
                 {ride.rideDateAndTime}
               </p>
               <p>
+                <b>Ride description: </b>
+                {ride.rideDescription}
+              </p>
+              <p>
                 <b>Organized by: </b>
                 {ride.user.name}
               </p>
             </div>
             <div className="AllRidesCard-button">
-              <Link to={`/allrides/${ride.id}`}><Button ghost>Full ride description</Button></Link>
+              <Link to={`/allrides/${ride.id}`}><Button ghost>See route description</Button></Link>
             </div>
           </div>
         ))}
