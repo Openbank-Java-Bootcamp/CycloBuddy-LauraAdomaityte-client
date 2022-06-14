@@ -4,7 +4,7 @@ import { AuthContext } from '../context/auth.context';
 const API_URL = "http://localhost:5005";
 
 function AddRide(props) {
-    const [ rideDateAndTime, setRideDateAndTime] = useState("2002-06-13 12:00");
+    const [ rideDateAndTime, setRideDateAndTime] = useState(null);
     const [ meetingLocation, setMeetingLocation ] = useState("");
     const [ closestCity, setClosestCity ] = useState("");
     const [ rideDescription, setRideDescription ] = useState("");
@@ -24,7 +24,7 @@ function AddRide(props) {
       })
       .then((response) => {
         // Reset the state
-        setRideDateAndTime("2002-06-13 12:00");
+        setRideDateAndTime(null);
         setMeetingLocation("");
         setClosestCity("");
         setRideDescription("");
