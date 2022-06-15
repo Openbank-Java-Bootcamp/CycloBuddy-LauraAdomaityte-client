@@ -32,6 +32,7 @@ function AllRidesPage() {
   return (
     <div className="Allridespage">
       <Sidebar />
+      
       <div className="AllRidesCard-wrapper">
       <h1 className="PageTitle">All rides:</h1>
       {showAddRide && <AddRide refreshRides={getAllRides} />}

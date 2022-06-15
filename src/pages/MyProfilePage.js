@@ -36,6 +36,7 @@ function MyProfilePage(props) {
             <div className="profileCard">
             <p><b>Name: </b>{me.name}</p>
             <p><b>Email: </b>{me.email}</p>
+            <p><b>City: </b>{me.bicycleType}</p>
             </div>
             </div>}
             
