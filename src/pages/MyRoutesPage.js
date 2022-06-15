@@ -5,6 +5,7 @@ const API_URL = "http://localhost:5005";
 
 function MyRoutesPage() {
   const [myRidesWithRoutes, setMyRidesWithRoute] = useState([]);
+  
 
   const getMyRides = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -32,8 +33,8 @@ function MyRoutesPage() {
       <div className="MyRidesCard-wrapper">
         <h1 className="PageTitle">My routes:</h1>
         {myRidesWithRoutes.map((ride) => (
-          <div className="MyRidesCard" key={ride.id}>
-            <div className="MyRidesCard-inner">
+          <div className="MyRoutessCard" key={ride.id}>
+            <div className="MyRoutesCard-inner">
               <h1 className="RideDetails-header">Route details:</h1>
               <p>
                 <b>Distance: </b>
