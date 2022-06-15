@@ -34,7 +34,7 @@ function LoginPage(props) {
 
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/mainpage"); // <== ADD
+        navigate("/"); // <== ADD
       })
       .catch((error) => {
         const errorDescription = error.response.data.errors[0].defaultMessage;

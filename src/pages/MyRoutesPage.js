@@ -32,7 +32,7 @@ function MyRoutesPage() {
       <div className="MyRidesCard-wrapper">
         <h1 className="PageTitle">My routes:</h1>
         {myRidesWithRoutes.map((ride) => (
-          <div className="MyRidesCard">
+          <div className="MyRidesCard" key={ride.id}>
             <div className="MyRidesCard-inner">
               <h1 className="RideDetails-header">Route details:</h1>
               <p>
