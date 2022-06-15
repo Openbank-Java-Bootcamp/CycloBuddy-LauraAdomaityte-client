@@ -69,7 +69,10 @@ function RideDetailsPage() {
               </div>
             )}
             <Link to="/allrides">
-              <Button ghost>Back to All rides</Button>
+              <Button ghost>Go to All rides</Button>
+            </Link>
+            <Link to="/myrides">
+              <Button ghost>Go to My rides</Button>
             </Link>
           </div>
         </div>
