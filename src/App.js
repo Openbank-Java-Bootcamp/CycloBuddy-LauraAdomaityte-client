@@ -15,6 +15,7 @@ import AllRidesPage from "./pages/AllRidesPage";
 import AllRoutesPage from "./pages/AllRoutesPage";
 import RideDetailsPage from "./pages/RideDetailsPage";
 import EditRidePage from "./pages/EditRidePage";
+import AddRoutePage from "./components/AddRoute";
 
 
 function App() {
