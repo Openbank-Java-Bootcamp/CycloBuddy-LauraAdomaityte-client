@@ -185,7 +185,8 @@ header {
   display: flex;
   justify-content: space-between;
   margin: 30px;
-  padding: 10px;
+  padding: 20px;
+  padding-bottom: 10px;
   text-align: left;
   width: 1000px;
   border-style: ridge;
@@ -196,6 +197,15 @@ header {
 
 .AllRidesCard-button {
   padding-left: 20px; 
+}
+
+.AllRideCard-pic-text {
+  display: flex;
+  flex-direction: row;
+}
+
+.AllRideCard-text {
+  padding-left: 10px;
 }
 
 .addRide-form {
@@ -213,6 +223,10 @@ header {
 
 .addRide-button {
   color: black;
+}
+
+.RidePicture:hover {
+  opacity: 0.7;
 }
 
 form > input {
@@ -286,7 +300,7 @@ form > input {
   margin: 30px;
   padding: 10px;
   text-align: left;
-  width: 1000px;
+  width: 1150px;
   border-style: ridge;
   border-color: rgb(158, 182, 199);
   background-color: rgba(89, 105, 116, 0.416);
@@ -294,7 +308,27 @@ form > input {
 }
 
 .MyRidesCard-inner{
-  width: 700px;
+display: flex;
+flex-direction: row;
+  width: 800px;
+}
+
+.MyRidesCard-inner-text{
+  padding-left: 10px;
+}
+
+/* MyRoutesPage */
+.MyRoutessCard {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+  padding: 10px;
+  text-align: left;
+  width: 1000px;
+  border-style: ridge;
+  border-color: rgb(158, 182, 199);
+  background-color: rgba(89, 105, 116, 0.416);
+  color: white;
 }
 
 /* titles */
@@ -364,6 +398,13 @@ form > input {
   border-color: rgb(158, 182, 199);
   background-color: rgba(89, 105, 116, 0.416);
   color: white;
+}
+
+.EditProfile-box {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  align-items: center;
 }
 
 /* AddRouteComponent */

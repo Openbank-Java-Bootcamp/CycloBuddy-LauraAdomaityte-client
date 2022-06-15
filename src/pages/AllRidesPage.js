@@ -26,21 +26,26 @@ function AllRidesPage() {
   }, []);
 
   const toggleShowAddRide = () => {
-    setShowAddRide(!showAddRide)
-  }
+    setShowAddRide(!showAddRide);
+  };
 
   return (
     <div className="Allridespage">
       <Sidebar />
-      
+
       <div className="AllRidesCard-wrapper">
-      <h1 className="PageTitle">All rides:</h1>
-      {showAddRide && <AddRide refreshRides={getAllRides} />}
-      <Button ghost onClick={toggleShowAddRide}>{showAddRide ? "Hide form" : "Add new ride"}</Button>
+        <h1 className="PageTitle">All rides:</h1>
+        {showAddRide && <AddRide refreshRides={getAllRides} />}
+        <Button ghost onClick={toggleShowAddRide}>
+          {showAddRide ? "Hide form" : "Add new ride"}
+        </Button>
         {rides.map((ride) => (
           <div className="AllRidesCard" key={ride.id}>
-            <div>
-              <p>
+            
+            <div className="AllRideCard-pic-text">
+              {ride.picture.length > 500 && <div><img src={`data:image/png;base64,${ride.picture}`}  width={230} className="RidePicture"/></div>}
+              {ride.picture.length < 500 && <div><img src={`${ride.picture}`} width={230} className="RidePicture"/></div>}
+              <div className="AllRideCard-text"><p>
                 <b>Meeting location: </b>
                 {ride.meetingLocation}
               </p>
@@ -55,10 +60,14 @@ function AllRidesPage() {
               <p>
                 <b>Organized by: </b>
                 {ride.user.name}
-              </p>
+              </p></div>
+              
             </div>
             <div className="AllRidesCard-button">
-              <Link to={`/allrides/${ride.id}`}><Button ghost>See route description</Button></Link>
+              <Link to={`/allrides/${ride.id}`}>
+                <Button ghost>See route description</Button>
+                
+              </Link>
             </div>
           </div>
         ))}
