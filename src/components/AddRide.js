@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 import { useNavigate } from "react-router-dom";
 const API_URL = "http://localhost:5005";
@@ -61,6 +61,13 @@ function AddRide(props) {
       .catch((error) => console.log(error));
   };
 
+  useEffect(() => {
+    document.getElementById("input_btn")
+    .addEventListener('click',function(){
+      document.getElementById("file").click();
+    },false);
+  }, [])
+
   return (
     <div>
       <form
@@ -100,7 +107,8 @@ function AddRide(props) {
           onChange={(event) => setRideDescription(event.target.value)}
         />
         <label>Image: </label>
-        <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg"/>
+        <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg" class='input-file'/>
+        <button type="button" className="addimage-button" id="input_btn">Browse image</button>
         <button type="submit" className="addRide-button">
           Submit
         </button>
