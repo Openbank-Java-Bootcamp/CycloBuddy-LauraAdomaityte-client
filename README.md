@@ -32,7 +32,7 @@ The pages which need authentification and authorization contain sidebar componen
 
 ## Demo
 
-![plot](readme-gif.jpg)
+![plot](readme-gif.gif)
 
 ## Future Works
 
