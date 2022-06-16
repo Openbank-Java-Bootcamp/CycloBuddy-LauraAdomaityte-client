@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/auth.context";
+import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 const API_URL = "http://localhost:5005";
 
@@ -109,9 +110,9 @@ function AddRide(props) {
         <label>Image: </label>
         <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg" class='input-file'/>
         <button type="button" className="addimage-button" id="input_btn">Browse image</button>
-        <button type="submit" className="addRide-button">
+        <Button ghost htmlType="submit" className="addRide-button">
           Submit
-        </button>
+        </Button>
       </form>
     </div>
   );

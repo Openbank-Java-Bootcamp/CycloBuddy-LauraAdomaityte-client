@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Button } from "antd";
-import { Card, Col, Row } from "antd";
+
 
 const API_URL = "http://localhost:5005";
 
@@ -35,49 +34,47 @@ function SignupPage(props) {
 
   return (
     <div className="SignupPage">
-      <div className="site-card-wrapper">
-        <Row gutter={16}>
-          <Col span={8}>
-            <Card title="Sign Up" className="sign-log-card" bordered={false}>
-              <form onSubmit={handleSignupSubmit}>
-                <label>Email:</label>
+      
+              <form onSubmit={handleSignupSubmit} className="login-form">
+                <label className="label">Email:</label>
                 <input
+                className="input-container"
                   type="email"
                   name="email"
                   value={email}
                   onChange={handleEmail}
                 />
 
-                <label>Password:</label>
+                <label className="label">Password:</label>
                 <input
+                className="input-container"
                   type="password"
                   name="password"
                   value={password}
                   onChange={handlePassword}
                 />
 
-                <label>Name:</label>
+                <label className="label">Name:</label>
                 <input
+                className="input-container"
                   type="text"
                   name="name"
                   value={name}
                   onChange={handleName}
                 />
 
-                <button type="submit">Sign Up</button>
+                <button id="login-btn" type="submit">Sign Up</button>
               </form>
 
               {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-              <p>Already have account?</p>
-              <button>
-                <Link to={"/login"}> Login</Link>
+              <p className="notuser-text">Already have account?</p>
+              <button id="login-btn">
+                <Link to={"/login"} className="login-link"> Login</Link>
               </button>
-            </Card>
-          </Col>
-        </Row>
+     
       </div>
-    </div>
+  
   );
 }
 

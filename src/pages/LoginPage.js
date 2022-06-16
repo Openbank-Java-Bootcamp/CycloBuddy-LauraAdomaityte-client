@@ -1,11 +1,13 @@
 // src/pages/LoginPage.js
 
 import { useContext, useState } from "react";
+
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
-import { Button } from "antd";
-import { Card, Col, Row } from "antd";
+import pic from "../images/pic2.jpg";
+
+
 
 const API_URL = "http://localhost:5005";
 
@@ -41,40 +43,40 @@ function LoginPage(props) {
   };
 
   return (
-    <div className="LoginPage">
-      <div className="site-card-wrapper">
-        <Row gutter={16}>
-          <Col span={8}>
-            <Card title="Login" className="sign-log-card" bordered={false}>
-              <form onSubmit={handleLoginSubmit}>
-                <label>Email:</label>
-                <input
+    <div className="Loginpage">
+      
+        
+            <form onSubmit={handleLoginSubmit} className="login-form" >
+                <label className="label">Email:</label>
+                <input className="input-container"
                   type="email"
                   name="email"
                   value={email}
                   onChange={handleEmail}
                 />
 
-                <label>Password:</label>
+                <label className="label">Password:</label>
                 <input
+                className="input-container"
                   type="password"
                   name="password"
                   value={password}
                   onChange={handlePassword}
                 />
 
-                <button type="submit">Login</button>
+                <button type="submit" id="login-btn">Login</button>
+
+                
               </form>
               {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-              <p>Don't have an account yet?</p>
-              <button>
-                <Link to={"/signup"}> Sign Up</Link>
+              <p className="notuser-text">Don't have an account yet?</p>
+              <button id="login-btn">
+                <Link to={"/signup"} className="login-link"> Sign Up</Link>
               </button>
-            </Card>
-          </Col>
-        </Row>
-      </div>
+              
+              
+      
     </div>
   );
 }
