@@ -153,11 +153,11 @@ header {
 
 
 .homepage-video{
-  width: 80%;
+  width: 1200px;
   display: flex;
   align-items: center;
-  padding: 10px 80px;
-
+  padding: 20px 90px;
+  margin: 0;
   background-color: #879097;
 }
 
@@ -173,8 +173,9 @@ header {
   top: 8px;
   right: 50px;
   color: white;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-right: 0px;
+  margin-right: 190px;
   font-size: 3em;
   font-weight: 100;
   text-shadow: 2px 2px 10px #9a7878;;
