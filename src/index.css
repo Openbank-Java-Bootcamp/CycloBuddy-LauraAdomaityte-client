@@ -63,6 +63,10 @@
   margin: 30px 0;
 }
 
+.loggedin-homepage {
+  height: 80vh;
+}
+
 .top-right {
   position: absolute;
   top: 8px;
@@ -181,8 +185,22 @@ header {
   display: flex;
 }
 
+.search-input{
+  width: 400px;
+  background-color: #ffffff33;
+  color: white;
+  border-color: white
+}
+
+.search-name{
+  color: white;
+  padding-top: 10px;
+  text-shadow: 1px 1px 4px #000000;
+}
+
 .AllRidesCard-wrapper {
   background-color: rgb(158, 182, 199);
+  width: 1060px;
   margin: 0;
   padding: 0;
 }
@@ -279,12 +297,16 @@ form > input {
 
 .AllRoutesCard-wrapper {
   background-color: rgb(158, 182, 199);
+  width: 1060px;
   margin: 0;
   padding: 0;
 }
 .AllRoutesCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   margin: 30px;
-  padding: 10px;
+  padding: 30px 40px;
   text-align: left;
   width: 1000px;
   border-style: ridge;
@@ -300,6 +322,7 @@ form > input {
 
 .MyRidesCard-wrapper {
   background-color: rgb(158, 182, 199);
+  width: 1070px;
   margin: 0;
   padding: 0;
 }
@@ -340,6 +363,7 @@ form > input {
   background-color: rgba(89, 105, 116, 0.416);
   color: white;
 }
+
 
 /* titles */
 .PageTitle {

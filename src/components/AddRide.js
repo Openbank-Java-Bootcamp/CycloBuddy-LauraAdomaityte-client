@@ -17,7 +17,6 @@ function AddRide(props) {
   const { user } = useContext(AuthContext);
 
   const onFormChange = (e) => {
-    //console.log("file to upload:", e.target.files[0]);
     let file = e.target.files[0];
 
     if (file) {
@@ -50,8 +49,7 @@ function AddRide(props) {
       .post(`${API_URL}/api/rides`, requestBody, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-      .then((response) => {
-        // Reset the state
+      .then(() => {
         setRideDateAndTime(null);
         setMeetingLocation("");
         setClosestCity("");
@@ -108,7 +106,7 @@ function AddRide(props) {
           onChange={(event) => setRideDescription(event.target.value)}
         />
         <label>Image: </label>
-        <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg" class='input-file'/>
+        <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg" className='input-file'/>
         <button type="button" className="addimage-button" id="input_btn">Browse image</button>
         <Button ghost htmlType="submit" className="addRide-button">
           Submit

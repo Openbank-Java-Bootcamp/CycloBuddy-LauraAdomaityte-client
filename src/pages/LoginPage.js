@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
-import pic from "../images/pic2.jpg";
+
 
 
 

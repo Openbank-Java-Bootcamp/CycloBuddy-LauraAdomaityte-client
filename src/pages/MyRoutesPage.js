@@ -5,7 +5,6 @@ const API_URL = "http://localhost:5005";
 
 function MyRoutesPage() {
   const [myRidesWithRoutes, setMyRidesWithRoute] = useState([]);
-  
 
   const getMyRides = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -17,7 +16,7 @@ function MyRoutesPage() {
       .then((response) => {
         const myRidesWithRoute = response.data.filter((ride) => {
           return ride.route != null;
-        })
+        });
         setMyRidesWithRoute(myRidesWithRoute);
       })
       .catch((error) => console.log(error));
@@ -33,35 +32,56 @@ function MyRoutesPage() {
       <div className="MyRidesCard-wrapper">
         <h1 className="PageTitle">My routes:</h1>
         {myRidesWithRoutes.map((ride) => (
-          <div className="MyRoutessCard" key={ride.id}>
-            <div className="MyRoutesCard-inner">
-              <h1 className="RideDetails-header">Route details:</h1>
-              <p>
-                <b>Distance: </b>
-                {ride.route.distance} kilometers
-              </p>
-              <p>
-                <b>Elevation gain: </b>
-                {ride.route.elevationGain} meters
-              </p>
-              <p>
-                <b>Estimated duration: </b>
-                {ride.route.estimatedRouteDuration} minutes
-              </p>
-              <p>
-                <b>Route starts at: </b>
-                {ride.route.startPlace}
-              </p>
-              <p>
-                <b>Route ends at: </b>
-                {ride.route.endPlace}
-              </p>
-              <p>
-                <b>Route is for: </b>
-                {ride.route.bicycleType} bicycle
-              </p>
+          
+            <div className="AllRoutesCard">
+              <div>
+                <h1 className="RideDetails-header">Route details:</h1>
+                <p>
+                  <b>Distance: </b>
+                  {ride.route.distance} kilometers
+                </p>
+                <p>
+                  <b>Elevation gain: </b>
+                  {ride.route.elevationGain} meters
+                </p>
+                <p>
+                  <b>Estimated duration: </b>
+                  {ride.route.estimatedRouteDuration} minutes
+                </p>
+                <p>
+                  <b>Route starts at: </b>
+                  {ride.route.startPlace}
+                </p>
+                <p>
+                  <b>Route ends at: </b>
+                  {ride.route.endPlace}
+                </p>
+                <p>
+                  <b>Route is for: </b>
+                  {ride.route.bicycleType} bicycle
+                </p>
+              </div>
+              <div>{ride.picture.length > 500 && (
+                <div>
+                  <img
+                    src={`data:image/png;base64,${ride.picture}`}
+                    width={420}
+                    className="RidePicture"
+                  />
+                </div>
+              )}
+              
+              {ride.picture.length < 500 && (
+                <div>
+                  <img
+                    src={`${ride.picture}`}
+                    width={420}
+                    className="RidePicture"
+                  />
+                </div>
+              )}</div>
             </div>
-          </div>
+        
         ))}
       </div>
     </div>

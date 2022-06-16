@@ -15,7 +15,7 @@ function HomePage() {
       {isLoggedIn && (
         <div className="Mainpage">
         <Sidebar />
-        <div>
+        <div className="loggedin-homepage">
            <h3 className="top-right-main-text">Welcome to CycloBuddy!</h3> 
           <video autoPlay muted className="homepage-video"><source src={video} /></video>
          

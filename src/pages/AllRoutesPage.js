@@ -34,7 +34,9 @@ function AllRoutesPage() {
         <h1 className="PageTitle">All routes:</h1>
         {ridesWithRoute.map((ride) => (
           <div className="AllRoutesCard" key={ride.id}>
-            <h1 className="RideDetails-header">Route details:</h1>
+            
+            <div><h1 className="RideDetails-header">Route details:</h1>
+            
             <p>
               <b>Distance: </b>
               {ride.route.distance} kilometers
@@ -58,7 +60,28 @@ function AllRoutesPage() {
             <p>
               <b>Route is for: </b>
               {ride.route.bicycleType} bicycle
-            </p>
+            </p></div>
+            <div>
+            {ride.picture.length > 500 && (
+                <div>
+                  <img
+                    src={`data:image/png;base64,${ride.picture}`}
+                    width={420}
+                    className="RidePicture"
+                  />
+                </div>
+              )}
+              
+              {ride.picture.length < 500 && (
+                <div>
+                  <img
+                    src={`${ride.picture}`}
+                    width={420}
+                    className="RidePicture"
+                  />
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>
