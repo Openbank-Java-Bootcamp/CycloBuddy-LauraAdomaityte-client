@@ -147,27 +147,44 @@ header {
 .Mainpage{
   display: flex;
   flex-direction: row;
-  
+  align-items: flex-start; 
 }
 
-.Mainpage-pic{
-  width: 1350px;
-  padding: 25px 20px;
+
+
+.homepage-video{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  padding: 10px 80px;
+
   background-color: #879097;
 }
 
 
-.top-right-main{
+
+.homepage-video:hover {
+  opacity: 0.7;
+}
+
+
+.top-right-main-text{
   position: absolute;
   top: 8px;
   right: 50px;
   color: white;
   margin-top: 40px;
+  margin-right: 0px;
   font-size: 3em;
   font-weight: 100;
   text-shadow: 2px 2px 10px #9a7878;;
   padding-top: 80px;
 }
+
+
+
+
+
 
 
 /* AllRidesPage */
