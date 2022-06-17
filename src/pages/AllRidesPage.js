@@ -65,9 +65,9 @@ function AllRidesPage() {
       <div className="AllRidesCard-wrapper">
         <h1 className="PageTitle">All rides:</h1>
         {showAddRide && <AddRide refreshRides={getAllRides} />}
-        <Button ghost onClick={toggleShowAddRide}>
-          {showAddRide ? "Hide form" : "Add new ride"}
-        </Button>
+        <button className="addride-btn" onClick={toggleShowAddRide}>
+          {showAddRide ? "Hide form" : "Add ride"}
+        </button>
       
         <div>
           <Divider className="Search-divider"><p className="search-name">Search for a ride by closest city</p></Divider>
@@ -114,7 +114,7 @@ function AllRidesPage() {
                   {ride.rideDateAndTime}
                 </p>
                 <p>
-                  <b>Ride description: </b>
+                  <b>Description: </b>
                   {ride.rideDescription}
                 </p>
                 <p>
@@ -129,7 +129,7 @@ function AllRidesPage() {
             </div>
             <div className="AllRidesCard-button">
               <Link to={`/allrides/${ride.id}`}>
-                <Button ghost>See route description</Button>
+                <button className="ridedetails-btn">route description</button>
               </Link>
             </div>
           </div>

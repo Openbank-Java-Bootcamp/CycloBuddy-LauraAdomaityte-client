@@ -47,35 +47,38 @@ const handleSubmit = (event) => {
       <div className="EditRideCard-wrapper">
         <div className="EditRideCard">
           <form onSubmit={handleSubmit} className="addRide-form">
-            <label>Ride date and time:</label>
+            <label className="addride-label">Ride date and time:</label>
             <input
               type="datetime-local"
               name="rideDateAndTime"
               value={rideDateAndTime}
               onChange={(event) => setRideDateAndTime(event.target.value)}
             />
-            <label>Meeting location: </label>
+            <label className="addride-label">Meeting location: </label>
             <input
+            className="addride-input"
               type="text"
               name="meetingLocation"
               value={meetingLocation}
               onChange={(event) => setMeetingLocation(event.target.value)}
             />
-            <label>Closest city: </label>
+            <label className="addride-label">Closest city: </label>
             <input
+            className="addride-input"
               type="text"
               name="closestCity"
               value={closestCity}
               onChange={(event) => setClosestCity(event.target.value)}
             />
-            <label>Description: </label>
+            <label className="addride-label">Description: </label>
             <input
+            className="addride-input"
               type="text"
               name="rideDescription"
               value={rideDescription}
               onChange={(event) => setRideDescription(event.target.value)}
             />
-            <button type="submit" className="Edit-button">
+            <button type="submit" className="addimage-button">
               Submit
             </button>
           </form>

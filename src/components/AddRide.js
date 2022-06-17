@@ -69,48 +69,52 @@ function AddRide(props) {
 
   return (
     <div>
-      <form
+      <form 
         onSubmit={handleSubmit}
         className="addRide-form"
         onChange={(e) => onFormChange(e)}
       >
-        <label>Ride date and time:</label>
+        <label className="addride-label">Ride date and time:</label>
         <input
+         className="addride-input"
           type="datetime-local"
           name="rideDateAndTime"
           value={rideDateAndTime}
           onChange={(event) => setRideDateAndTime(event.target.value)}
         />
-        <label>Meeting location: </label>
+        <label className="addride-label">Meeting location: </label>
         <input
+        className="addride-input"
           type="text"
           name="meetingLocation"
           placeholder="type here..."
           value={meetingLocation}
           onChange={(event) => setMeetingLocation(event.target.value)}
         />
-        <label>Closest city: </label>
+        <label className="addride-label">Closest city: </label>
         <input
+         className="addride-input"
           type="text"
           name="closestCity"
           placeholder="type here..."
           value={closestCity}
           onChange={(event) => setClosestCity(event.target.value)}
         />
-        <label>Ride description: </label>
+        <label className="addride-label">Ride description: </label>
         <input
+         className="addride-input"
           type="text"
           name="rideDescription"
           placeholder="type here..."
           value={rideDescription}
           onChange={(event) => setRideDescription(event.target.value)}
         />
-        <label>Image: </label>
+        <label className="addride-label">Image: </label>
         <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg" className='input-file'/>
         <button type="button" className="addimage-button" id="input_btn">Browse image</button>
-        <Button ghost htmlType="submit" className="addRide-button">
+        <button  htmlType="submit" id="login-btn">
           Submit
-        </Button>
+        </button>
       </form>
     </div>
   );
