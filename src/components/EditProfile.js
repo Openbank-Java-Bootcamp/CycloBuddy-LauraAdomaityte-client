@@ -38,16 +38,16 @@ function EditProfile(props) {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} className="EditProfile-box">
-                <label>City: </label>
-                <input type="text" name="city" value={city} onChange={(event) => setCity(event.target.value)}/>
-                <label>My bicycle type: </label>
-                <input type="text" name="bicycleType" value={bicycleType} onChange={(event) => setBicycleType(event.target.value)} />
-                <label>My average speed</label>
-                <input type="number" name="averageSpeed" value={averageSpeed} onChange={(event) => setAverageSpeed(event.target.value)}/>
-                <label>My average kilometers per month</label>
-                <input type="number" name="averageKmPerMonth" value={averageKmPerMonth} onChange={(event) => setAverageKmPerMonth(event.target.value)} />
-                <button type="submit" className="Edit-button">Submit</button>
+            <form onSubmit={handleSubmit} className="addRide-form">
+                <label className="addride-label">City: </label>
+                <input className="addride-input" type="text" name="city" value={city} onChange={(event) => setCity(event.target.value)}/>
+                <label className="addride-label">My bicycle type: </label>
+                <input className="addride-input" type="text" name="bicycleType" value={bicycleType} onChange={(event) => setBicycleType(event.target.value)} />
+                <label className="addride-label">My average speed</label>
+                <input className="addride-input" type="number" name="averageSpeed" value={averageSpeed} onChange={(event) => setAverageSpeed(event.target.value)}/>
+                <label className="addride-label">My average kilometers per month</label>
+                <input className="addride-input" type="number" name="averageKmPerMonth" value={averageKmPerMonth} onChange={(event) => setAverageKmPerMonth(event.target.value)} />
+                <button type="submit" className="addimage-button">Submit</button>
             </form>
         </div>
     );

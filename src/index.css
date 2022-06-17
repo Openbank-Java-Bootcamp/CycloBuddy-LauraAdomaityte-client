@@ -189,7 +189,7 @@ header {
   width: 400px;
   background-color: #ffffff33;
   color: white;
-  border-color: white
+  border-color: white;
 }
 
 .search-name{
@@ -232,21 +232,30 @@ header {
 }
 
 .addRide-form {
-  width: 1000px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  margin: 30px;
-  padding: 10px;
-  border-style: ridge;
-  border-color: rgb(158, 182, 199);
-  background-color: rgba(89, 105, 116, 0.416);
-  color: white;
+}
+
+.addride-input{
+  border-width: 1px;
+  border-color: white;
+}
+
+.addride-label{
+  color: rgb(125, 116, 116);
+  text-shadow: 2px 2px 5px #879097;
 }
 
 .addRide-button {
   color: black;
 }
+
+
 
 .RidePicture:hover {
   opacity: 0.7;
@@ -257,8 +266,61 @@ form > input {
 }
 
 .addimage-button {
-  color: black;
-  margin: 10px 0;
+  align-self: center;
+  padding: 7px 30px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border: none;
+  color: #fff;
+  background-color: #9a7878;
+  box-shadow: 2px 2px 2px #9a7878;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in;
+}
+
+.addimage-button:hover{
+  background-color: rgb(158, 182, 199);
+  box-shadow: none;
+  transform: translateX(1px) translateY(1px);
+}
+
+.addride-btn{
+  align-self: center;
+  padding: 7px 30px;
+  margin-top: 10px;
+  border: none;
+  color: #fff;
+  background-color: #9a787884;
+  box-shadow: 2px 2px 2px #9a7878;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in;
+}
+
+.addride-btn:hover{
+  background-color: #8196A4;
+  box-shadow: none;
+  transform: translateX(1px) translateY(1px);
+}
+
+.ridedetails-btn{
+  align-self: center;
+  padding: 7px 30px;
+  margin-top: 10px;
+  border: none;
+  color: #fff;
+  background-color: #9a787884;
+  box-shadow: 2px 2px 2px #9a7878;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in;
+}
+
+.ridedetails-btn:hover {
+  background-color: #cfdbe379;
+  box-shadow: none;
+  transform: translateX(1px) translateY(1px);
 }
 
 .input-file {
@@ -389,7 +451,7 @@ form > input {
 
 .EditRideCard {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 30px;
   padding: 10px;
   text-align: left;
