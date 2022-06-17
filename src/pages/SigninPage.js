@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 const API_URL = "http://localhost:5005";
 
 function SignupPage(props) {
@@ -34,47 +33,49 @@ function SignupPage(props) {
 
   return (
     <div className="SignupPage">
-      
-              <form onSubmit={handleSignupSubmit} className="login-form">
-                <label className="label">Email:</label>
-                <input
-                className="input-container"
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={handleEmail}
-                />
+      <form onSubmit={handleSignupSubmit} className="login-form">
+        <label className="label">Email:</label>
+        <input
+          className="input-container"
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleEmail}
+        />
 
-                <label className="label">Password:</label>
-                <input
-                className="input-container"
-                  type="password"
-                  name="password"
-                  value={password}
-                  onChange={handlePassword}
-                />
+        <label className="label">Password:</label>
+        <input
+          className="input-container"
+          type="password"
+          name="password"
+          value={password}
+          onChange={handlePassword}
+        />
 
-                <label className="label">Name:</label>
-                <input
-                className="input-container"
-                  type="text"
-                  name="name"
-                  value={name}
-                  onChange={handleName}
-                />
+        <label className="label">Name:</label>
+        <input
+          className="input-container"
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleName}
+        />
 
-                <button id="login-btn" type="submit">Sign Up</button>
-              </form>
+        <button id="login-btn" type="submit">
+          Sign Up
+        </button>
+      </form>
 
-              {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-              <p className="notuser-text">Already have account?</p>
-              <button id="login-btn">
-                <Link to={"/login"} className="login-link"> Login</Link>
-              </button>
-     
-      </div>
-  
+      <p className="notuser-text">Already have account?</p>
+      <button id="login-btn">
+        <Link to={"/login"} className="login-link">
+          {" "}
+          Login
+        </Link>
+      </button>
+    </div>
   );
 }
 

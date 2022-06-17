@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+//data for the sidebar
 export const SidebarData = [
     {
         title: "Main page",

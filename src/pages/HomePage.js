@@ -6,25 +6,24 @@ import video from "../images/main-video.mp4";
 import { AuthContext } from "../context/auth.context";
 const { Content } = Layout;
 
+//home page which does conditional rendering depending if the user is anonymous or logged in
 function HomePage() {
   const { isLoggedIn } = useContext(AuthContext);
 
   return (
     <div>
-      
       {isLoggedIn && (
         <div className="Mainpage">
-        <Sidebar />
-        <div className="loggedin-homepage">
-           <h3 className="top-right-main-text">Welcome to CycloBuddy!</h3> 
-          <video autoPlay muted className="homepage-video"><source src={video} /></video>
-         
-          
+          <Sidebar />
+          <div className="loggedin-homepage">
+            <h3 className="top-right-main-text">Welcome to CycloBuddy!</h3>
+            <video autoPlay muted className="homepage-video">
+              <source src={video} />
+            </video>
+          </div>
         </div>
-      </div>
       )}
-      
-    
+
       {!isLoggedIn && (
         <Content className="container">
           <h3 className="top-right">The best way to find cycling buddies</h3>

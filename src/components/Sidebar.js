@@ -1,6 +1,7 @@
 import React from "react";
 import { SidebarData } from "./SidebarData";
 
+//sidebar component which is shown just for logged in users
 function Sidebar() {
   return (
     <div className="SideBar">

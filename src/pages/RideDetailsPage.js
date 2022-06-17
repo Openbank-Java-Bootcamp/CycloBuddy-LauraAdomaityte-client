@@ -69,10 +69,10 @@ function RideDetailsPage() {
               </div>
             )}
             <Link to="/allrides">
-              <Button ghost>Go to All rides</Button>
+              <button className="ridedetails-btn">Go to All rides</button>
             </Link>
             <Link to="/myrides">
-              <Button ghost>Go to My rides</Button>
+              <button className="ridedetails-btn">Go to My rides</button>
             </Link>
           </div>
         </div>
@@ -83,7 +83,7 @@ function RideDetailsPage() {
           <div className="RideDetails-box-inner">
             <p>Route is still not being set yet. Check later on.</p>
             <Link to="/allrides">
-              <Button ghost>Back to All rides</Button>
+              <button className="ridedetails-btn">Back to All rides</button>
             </Link>
           </div>
         </div>

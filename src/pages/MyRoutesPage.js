@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 const API_URL = "http://localhost:5005";
 
+//the page where my routes are being shown
 function MyRoutesPage() {
   const [myRidesWithRoutes, setMyRidesWithRoute] = useState([]);
 
@@ -32,36 +33,36 @@ function MyRoutesPage() {
       <div className="MyRidesCard-wrapper">
         <h1 className="PageTitle">My routes:</h1>
         {myRidesWithRoutes.map((ride) => (
-          
-            <div className="AllRoutesCard">
-              <div>
-                <h1 className="RideDetails-header">Route details:</h1>
-                <p>
-                  <b>Distance: </b>
-                  {ride.route.distance} kilometers
-                </p>
-                <p>
-                  <b>Elevation gain: </b>
-                  {ride.route.elevationGain} meters
-                </p>
-                <p>
-                  <b>Estimated duration: </b>
-                  {ride.route.estimatedRouteDuration} minutes
-                </p>
-                <p>
-                  <b>Route starts at: </b>
-                  {ride.route.startPlace}
-                </p>
-                <p>
-                  <b>Route ends at: </b>
-                  {ride.route.endPlace}
-                </p>
-                <p>
-                  <b>Route is for: </b>
-                  {ride.route.bicycleType} bicycle
-                </p>
-              </div>
-              <div>{ride.picture.length > 500 && (
+          <div className="AllRoutesCard" key={ride.id}>
+            <div>
+              <h1 className="RideDetails-header">Route details:</h1>
+              <p>
+                <b>Distance: </b>
+                {ride.route.distance} kilometers
+              </p>
+              <p>
+                <b>Elevation gain: </b>
+                {ride.route.elevationGain} meters
+              </p>
+              <p>
+                <b>Estimated duration: </b>
+                {ride.route.estimatedRouteDuration} minutes
+              </p>
+              <p>
+                <b>Route starts at: </b>
+                {ride.route.startPlace}
+              </p>
+              <p>
+                <b>Route ends at: </b>
+                {ride.route.endPlace}
+              </p>
+              <p>
+                <b>Route is for: </b>
+                {ride.route.bicycleType} bicycle
+              </p>
+            </div>
+            <div>
+              {ride.picture.length > 500 && (
                 <div>
                   <img
                     src={`data:image/png;base64,${ride.picture}`}
@@ -70,7 +71,7 @@ function MyRoutesPage() {
                   />
                 </div>
               )}
-              
+
               {ride.picture.length < 500 && (
                 <div>
                   <img
@@ -79,9 +80,9 @@ function MyRoutesPage() {
                     className="RidePicture"
                   />
                 </div>
-              )}</div>
+              )}
             </div>
-        
+          </div>
         ))}
       </div>
     </div>
