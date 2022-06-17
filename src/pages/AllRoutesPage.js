@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 const API_URL = "http://localhost:5005";
 
+//the page where all routes get 
 function AllRoutesPage() {
   const [ridesWithRoute, setRidesWithRoute] = useState([]);
 
+  //get all routes
   const getAllRoutes = () => {
     const storedToken = localStorage.getItem("authToken");
 
@@ -23,6 +25,7 @@ function AllRoutesPage() {
       .catch((error) => console.log(error));
   };
 
+  //call the method to get all routes
   useEffect(() => {
     getAllRoutes();
   }, []);
@@ -34,35 +37,36 @@ function AllRoutesPage() {
         <h1 className="PageTitle">All routes:</h1>
         {ridesWithRoute.map((ride) => (
           <div className="AllRoutesCard" key={ride.id}>
-            
-            <div><h1 className="RideDetails-header">Route details:</h1>
-            
-            <p>
-              <b>Distance: </b>
-              {ride.route.distance} kilometers
-            </p>
-            <p>
-              <b>Elevation gain: </b>
-              {ride.route.elevationGain} meters
-            </p>
-            <p>
-              <b>Estimated duration: </b>
-              {ride.route.estimatedRouteDuration} minutes
-            </p>
-            <p>
-              <b>Route starts at: </b>
-              {ride.route.startPlace}
-            </p>
-            <p>
-              <b>Route ends at: </b>
-              {ride.route.endPlace}
-            </p>
-            <p>
-              <b>Route is for: </b>
-              {ride.route.bicycleType} bicycle
-            </p></div>
             <div>
-            {ride.picture.length > 500 && (
+              <h1 className="RideDetails-header">Route details:</h1>
+
+              <p>
+                <b>Distance: </b>
+                {ride.route.distance} kilometers
+              </p>
+              <p>
+                <b>Elevation gain: </b>
+                {ride.route.elevationGain} meters
+              </p>
+              <p>
+                <b>Estimated duration: </b>
+                {ride.route.estimatedRouteDuration} minutes
+              </p>
+              <p>
+                <b>Route starts at: </b>
+                {ride.route.startPlace}
+              </p>
+              <p>
+                <b>Route ends at: </b>
+                {ride.route.endPlace}
+              </p>
+              <p>
+                <b>Route is for: </b>
+                {ride.route.bicycleType} bicycle
+              </p>
+            </div>
+            <div>
+              {ride.picture.length > 500 && (
                 <div>
                   <img
                     src={`data:image/png;base64,${ride.picture}`}
@@ -71,7 +75,7 @@ function AllRoutesPage() {
                   />
                 </div>
               )}
-              
+
               {ride.picture.length < 500 && (
                 <div>
                   <img

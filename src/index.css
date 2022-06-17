@@ -185,14 +185,14 @@ header {
   display: flex;
 }
 
-.search-input{
+.search-input {
   width: 400px;
   background-color: #ffffff33;
   color: white;
   border-color: white;
 }
 
-.search-name{
+.search-name {
   color: white;
   padding-top: 10px;
   text-shadow: 1px 1px 4px #000000;
@@ -241,12 +241,12 @@ header {
   align-items: center;
 }
 
-.addride-input{
+.addride-input {
   border-width: 1px;
   border-color: white;
 }
 
-.addride-label{
+.addride-label {
   color: rgb(125, 116, 116);
   text-shadow: 2px 2px 5px #879097;
 }
@@ -254,8 +254,6 @@ header {
 .addRide-button {
   color: black;
 }
-
-
 
 .RidePicture:hover {
   opacity: 0.7;
@@ -279,13 +277,13 @@ form > input {
   transition: all 0.2s ease-in;
 }
 
-.addimage-button:hover{
+.addimage-button:hover {
   background-color: rgb(158, 182, 199);
   box-shadow: none;
   transform: translateX(1px) translateY(1px);
 }
 
-.addride-btn{
+.addride-btn {
   align-self: center;
   padding: 7px 30px;
   margin-top: 10px;
@@ -298,15 +296,15 @@ form > input {
   transition: all 0.2s ease-in;
 }
 
-.addride-btn:hover{
-  background-color: #8196A4;
+.addride-btn:hover {
+  background-color: #8196a4;
   box-shadow: none;
   transform: translateX(1px) translateY(1px);
 }
 
-.ridedetails-btn{
+.ridedetails-btn {
   align-self: center;
-  padding: 7px 30px;
+  padding: 7px 10px;
   margin-top: 10px;
   border: none;
   color: #fff;
@@ -388,6 +386,7 @@ form > input {
   margin: 0;
   padding: 0;
 }
+
 .MyRidesCard {
   display: flex;
   justify-content: space-between;
@@ -402,6 +401,7 @@ form > input {
 }
 
 .MyRidesCard-inner {
+  padding: 12px 0;
   display: flex;
   flex-direction: row;
   width: 680px;
@@ -410,7 +410,6 @@ form > input {
 .MyRidesCard-inner-text {
   padding-left: 10px;
 }
-
 
 /* MyRoutesPage */
 .MyRoutessCard {
@@ -425,7 +424,6 @@ form > input {
   background-color: rgba(89, 105, 116, 0.416);
   color: white;
 }
-
 
 /* titles */
 .PageTitle {
@@ -526,7 +524,7 @@ form > input {
 }
 
 /* LoginPage */
-.Loginpage{
+.Loginpage {
   background-image: url("../src/images/pic22.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -540,7 +538,7 @@ form > input {
   font-family: sans-serif;
   margin: 10px 0;
   height: 75vh;
-  color: white
+  color: white;
 }
 
 .login-form {
@@ -551,7 +549,7 @@ form > input {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  text-shadow:2px 2px 3px black;
+  text-shadow: 2px 2px 3px black;
 }
 
 .input-container {
@@ -586,7 +584,7 @@ form > input {
   transform: translateX(1px) translateY(1px);
 }
 
-.login-link{
+.login-link {
   color: white;
 }
 
@@ -596,7 +594,7 @@ form > input {
 
 .notuser-text {
   margin-top: 10px;
-  text-shadow:2px 2px 4px black;
+  text-shadow: 2px 2px 4px black;
   margin-bottom: 0;
 }
 
@@ -615,6 +613,5 @@ form > input {
   font-family: sans-serif;
   margin: 10px 0;
   height: 75vh;
-  color: white
+  color: white;
 }
-

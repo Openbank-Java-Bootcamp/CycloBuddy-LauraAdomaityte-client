@@ -17,25 +17,87 @@ import RideDetailsPage from "./pages/RideDetailsPage";
 import EditRidePage from "./pages/EditRidePage";
 import AddRoutePage from "./components/AddRoute";
 
-
 function App() {
   return (
-    <div className="App" >
+    <div className="App">
       <Navbar />
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="*" element={<HomePage/>} />
-        <Route path="/signup" element={<IsAnon><SignupPage /></IsAnon>} />
-        <Route path="/login" element={<IsAnon><LoginPage /></IsAnon>} />
-        
-        <Route path="/profile" element={<IsPrivate><MyProfilePage/></IsPrivate>} />
-        <Route path="/myrides" element={<IsPrivate><MyRidesPage/></IsPrivate>} />
-        <Route path="/myroutes" element={<IsPrivate><MyRoutesPage/></IsPrivate>} />
-        <Route path="/allrides" element={<IsPrivate><AllRidesPage/></IsPrivate>} />
-        <Route path="/allroutes" element={<IsPrivate><AllRoutesPage/></IsPrivate>} />
-        <Route path="/allrides/:rideId" element={<IsPrivate><RideDetailsPage/></IsPrivate>}/>
-        <Route path="/allrides/edit/:rideId" element={<IsPrivate><EditRidePage/></IsPrivate>} />
+        <Route path="*" element={<HomePage />} />
+        <Route
+          path="/signup"
+          element={
+            <IsAnon>
+              <SignupPage />
+            </IsAnon>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <IsAnon>
+              <LoginPage />
+            </IsAnon>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <IsPrivate>
+              <MyProfilePage />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/myrides"
+          element={
+            <IsPrivate>
+              <MyRidesPage />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/myroutes"
+          element={
+            <IsPrivate>
+              <MyRoutesPage />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/allrides"
+          element={
+            <IsPrivate>
+              <AllRidesPage />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/allroutes"
+          element={
+            <IsPrivate>
+              <AllRoutesPage />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/allrides/:rideId"
+          element={
+            <IsPrivate>
+              <RideDetailsPage />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/allrides/edit/:rideId"
+          element={
+            <IsPrivate>
+              <EditRidePage />
+            </IsPrivate>
+          }
+        />
       </Routes>
 
       <Footer />

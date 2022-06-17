@@ -1,21 +1,19 @@
 // src/pages/LoginPage.js
 
 import { useContext, useState } from "react";
-
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
-
-
-
 const API_URL = "http://localhost:5005";
 
-function LoginPage(props) {
+//login page
+function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
+  //for redirecting the user to the home page after being logged in
   const navigate = useNavigate();
 
   const { storeToken, authenticateUser } = useContext(AuthContext);
@@ -34,7 +32,7 @@ function LoginPage(props) {
 
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/"); // <== ADD
+        navigate("/"); 
       })
       .catch((error) => {
         const errorDescription = error.response.data.errors[0].defaultMessage;
@@ -44,39 +42,38 @@ function LoginPage(props) {
 
   return (
     <div className="Loginpage">
-      
-        
-            <form onSubmit={handleLoginSubmit} className="login-form" >
-                <label className="label">Email:</label>
-                <input className="input-container"
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={handleEmail}
-                />
+      <form onSubmit={handleLoginSubmit} className="login-form">
+        <label className="label">Email:</label>
+        <input
+          className="input-container"
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleEmail}
+        />
 
-                <label className="label">Password:</label>
-                <input
-                className="input-container"
-                  type="password"
-                  name="password"
-                  value={password}
-                  onChange={handlePassword}
-                />
+        <label className="label">Password:</label>
+        <input
+          className="input-container"
+          type="password"
+          name="password"
+          value={password}
+          onChange={handlePassword}
+        />
 
-                <button type="submit" id="login-btn">Login</button>
+        <button type="submit" id="login-btn">
+          Login
+        </button>
+      </form>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-                
-              </form>
-              {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-              <p className="notuser-text">Don't have an account yet?</p>
-              <button id="login-btn">
-                <Link to={"/signup"} className="login-link"> Sign Up</Link>
-              </button>
-              
-              
-      
+      <p className="notuser-text">Don't have an account yet?</p>
+      <button id="login-btn">
+        <Link to={"/signup"} className="login-link">
+          {" "}
+          Sign Up
+        </Link>
+      </button>
     </div>
   );
 }

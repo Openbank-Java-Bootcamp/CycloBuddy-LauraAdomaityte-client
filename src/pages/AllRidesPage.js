@@ -8,6 +8,7 @@ import AddRide from "../components/AddRide";
 
 const API_URL = "http://localhost:5005";
 
+//page where all the rides are being shown
 function AllRidesPage() {
   const [rides, setRides] = useState([]);
   const [ridesDB, setRidesDB] = useState(rides);
@@ -68,9 +69,11 @@ function AllRidesPage() {
         <button className="addride-btn" onClick={toggleShowAddRide}>
           {showAddRide ? "Hide form" : "Add ride"}
         </button>
-      
+
         <div>
-          <Divider className="Search-divider"><p className="search-name">Search for a ride by closest city</p></Divider>
+          <Divider className="Search-divider">
+            <p className="search-name">Search for a ride by closest city</p>
+          </Divider>
           <input
             value={searchField}
             type="search"
@@ -80,11 +83,10 @@ function AllRidesPage() {
             className="search-input"
           />
         </div>
-        
+
         {ridesDB.map((ride) => (
           <div className="AllRidesCard" key={ride.id}>
             <div className="AllRideCard-pic-text">
-            
               {ride.picture.length > 500 && (
                 <div>
                   <img
@@ -94,7 +96,7 @@ function AllRidesPage() {
                   />
                 </div>
               )}
-              
+
               {ride.picture.length < 500 && (
                 <div>
                   <img

@@ -62,7 +62,10 @@ function MyProfilePage(props) {
               <b>Bicycle type: </b>
               {me.bicycleType}
             </p>
-            <button className="ridedetails-btn" onClick={toggleShowEditProfileForm}>
+            <button
+              className="ridedetails-btn"
+              onClick={toggleShowEditProfileForm}
+            >
               Edit profile
             </button>
             {showEditProfileForm && (

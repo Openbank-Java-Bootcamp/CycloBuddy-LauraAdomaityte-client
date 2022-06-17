@@ -8,14 +8,12 @@ function AuthProviderWrapper(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
-  
 
   const storeToken = (token) => {
     localStorage.setItem("authToken", token);
   };
 
   const authenticateUser = () => {
- 
     const storedToken = localStorage.getItem("authToken");
 
     if (storedToken) {
@@ -24,8 +22,6 @@ function AuthProviderWrapper(props) {
           headers: { Authorization: `Bearer ${storedToken}` },
         })
         .then((response) => {
-          
-
           const user = response.data;
 
           setIsLoggedIn(true);
@@ -33,7 +29,6 @@ function AuthProviderWrapper(props) {
           setUser(user);
         })
         .catch((error) => {
-
           setIsLoggedIn(false);
           setIsLoading(false);
           setUser(null);
